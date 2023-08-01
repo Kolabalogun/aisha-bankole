@@ -5,7 +5,7 @@ const About = () => {
 
   return (
     <div className="bg-[#996AA0]" id="about">
-      <div className="max-w-[1240px] mx-auto py-10 md:py-40 px-5 sm:px-10 xl:px-0  grid grid-cols-1 lg:grid-cols-2 ">
+      <div className="max-w-[1240px] mx-auto py-16 md:py-40 px-5 sm:px-10 xl:px-0  grid grid-cols-1 lg:grid-cols-2 ">
         <div className="flex flex-col mr-8">
           <h1 className="text-white text-3xl md:text-[50px] md:leading-[52px] leading-[36px] font-bold">
             {pageContent?.aboutTitle

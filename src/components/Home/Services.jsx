@@ -6,7 +6,7 @@ import { useGlobalContext } from "../../functions/context";
 const Services = () => {
   const { pageContent } = useGlobalContext();
   return (
-    <div className="max-w-[1240px] mx-auto py-10 md:py-40 px-5 sm:px-10 xl:px-0  grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <div className="max-w-[1240px] mx-auto py-16 md:py-40 px-5 sm:px-10 xl:px-0  grid grid-cols-1 lg:grid-cols-2 gap-16">
       <div className="flex flex-col">
         <h1 className="text-black text-3xl md:text-[52px] md:leading-[58px] leading-[36px] font-bold">
           {pageContent?.serviceTitle

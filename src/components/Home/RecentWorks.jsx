@@ -7,7 +7,7 @@ const RecentWorks = () => {
 
   return (
     <div className="bg-[#996AA0]" id="portfolio">
-      <div className="max-w-[1240px] mx-auto py-10 md:py-40 px-5 sm:px-10 xl:px-0">
+      <div className="max-w-[1240px] mx-auto py-16 md:py-40 px-5 sm:px-10 xl:px-0">
         <h1 className="font-bold text-white text-3xl md:text-[50px] md:leading-[52px] leading-[36px] ">
           Recent Works
         </h1>
