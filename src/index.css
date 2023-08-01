@@ -154,8 +154,8 @@ button:focus-visible {
 /* loader  */
 
 .loader {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: inline-block;
   border-top: 5px solid #fff;
@@ -169,8 +169,8 @@ button:focus-visible {
   position: absolute;
   left: 0;
   top: 0;
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border-left: 5px solid #2d2d2d;
   border-bottom: 5px solid transparent;
