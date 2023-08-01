@@ -27,7 +27,7 @@ const Hero = () => {
       </div>
 
       {/* Caption */}
-      <div className="max-w-[1240px] h-[85%] px-5 sm:px-10 xl:px-0 relative mx-auto">
+      <div className="max-w-[1240px] h-[80%] md:h-[85%] px-5 sm:px-10 xl:px-0 relative mx-auto">
         <div className="absolute top-1/2 transform -translate-y-1/2 text-white sm:px-4">
           <h1 className="font-medium leading-[1.2em] lg:text-[5rem] text-white md:text-[4rem] sm:text-5xl text-4xl">
             {pageContent?.homeSectionCaption
