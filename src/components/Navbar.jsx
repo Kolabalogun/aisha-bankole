@@ -29,65 +29,52 @@ const Navbar = () => {
             <Link
               activeClass="active"
               to="home"
-              href="/"
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className={
                 " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
               }
-              onClick={() => {
-                navigate("/");
-              }}
             >
               Home
             </Link>
             <Link
               activeClass="active"
-              to="/about"
+              to="about"
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className={
                 " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
               }
-              onClick={() => {
-                navigate("/about");
-              }}
             >
               About
             </Link>
             <Link
               activeClass="active"
-              to="/rooms"
+              to="portfolio"
               spy={true}
               smooth={true}
-              offset={-80}
-              duration={500}
+              offset={40}
+              duration={800}
               className={
                 " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
               }
-              onClick={() => {
-                navigate("/rooms");
-              }}
             >
               portfolio
             </Link>
             <Link
               activeClass="active"
-              to="/contact"
+              to="contact"
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className={
                 " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
               }
-              onClick={() => {
-                navigate("/contact");
-              }}
             >
               Contact
             </Link>
@@ -110,7 +97,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className="border-b-2  border-zinc-300 w-full cursor-pointer"
               onClick={() => {
                 navigate("/");
@@ -126,7 +113,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className="border-b-2  border-zinc-300 w-full cursor-pointer"
               onClick={() => {
                 navigate("/about");
@@ -143,7 +130,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className="border-b-2  border-zinc-300 w-full cursor-pointer"
               onClick={() => {
                 navigate("/rooms");
@@ -160,7 +147,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               offset={-80}
-              duration={500}
+              duration={800}
               className="border-b-2  border-zinc-300 w-full cursor-pointer"
               onClick={() => {
                 navigate("/contact");
