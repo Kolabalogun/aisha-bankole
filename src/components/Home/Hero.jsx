@@ -1,5 +1,6 @@
 import { BsArrowDown } from "react-icons/bs";
 import vid from "../../assets/vid4.mp4";
+import dummyImg from "../../assets/dummy.jpg";
 import Navbar from "../Navbar";
 import { useGlobalContext } from "../../functions/context";
 import { Link } from "react-scroll";
@@ -13,6 +14,7 @@ const Hero = () => {
         className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay
         loop
+        poster={dummyImg}
         muted
       >
         <source src={vid} type="video/mp4" />
