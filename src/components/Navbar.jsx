@@ -4,160 +4,82 @@ import { useState } from "react";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 
-import { useNavigate } from "react-router-dom";
+import useMediaQuery from "../Hook/useMediaQuery";
+import { NavLinks } from "./links";
 
 const Navbar = () => {
-  const navigate = useNavigate();
-
-  const [nav, setnav] = useState(false);
-
-  function handleNavClick() {
-    setnav(!nav);
-  }
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
     <div className="relative flex items-center justify-center">
       {/* <div className="absolute  h-screen w-full "> </div> */}
       <div className={`w-full h-[80px]  bg-transparent  py-5  `}>
-        <div className="flex justify-between items-center w-full ">
+        <div className="flex py-5 justify-between items-center w-full ">
           <div className=" ">
             <p className="uppercase font-semibold text-white ">Aisha </p>
             <p className="uppercase font-semibold text-white ">Bankole </p>
           </div>
 
-          <ul className="hidden md:flex ">
-            <Link
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className={
-                " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
-              }
+          {isAboveMediumScreens ? (
+            <div>
+              {NavLinks.map(({ title, link }, idx) => (
+                <Link
+                  key={idx}
+                  activeClass="active"
+                  to={link}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={800}
+                  className={
+                    " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
+                  }
+                >
+                  {title}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <button
+              className="rounded-full bg-secondary-500 p-2"
+              onClick={() => setIsMenuToggled(!isMenuToggled)}
             >
-              Home
-            </Link>
-            <Link
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className={
-                " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
-              }
-            >
-              About
-            </Link>
-            <Link
-              activeClass="active"
-              to="portfolio"
-              spy={true}
-              smooth={true}
-              offset={40}
-              duration={800}
-              className={
-                " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2  m-4 text-white  "
-              }
-            >
-              portfolio
-            </Link>
-            <Link
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className={
-                " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
-              }
-            >
-              Contact
-            </Link>
-          </ul>
-
-          <div className="md:hidden cursor-pointer" onClick={handleNavClick}>
-            {!nav ? (
               <img src={menu} className="w-8 h-10 fill-white" alt="menu" />
-            ) : (
-              <img src={close} className="w-6 h-8 fill-white" alt="close" />
-            )}
-          </div>
+            </button>
+          )}
         </div>
 
-        {nav && (
-          <ul className=" h-screen  w-full bg-black md:hidden z-[1000]  px-8">
-            <Link
-              activeClass="active"
-              to="/"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className="border-b-2  border-zinc-300 w-full cursor-pointer"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
-                Home
-              </li>
-            </Link>
-            <Link
-              activeClass="active"
-              to="/about"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className="border-b-2  border-zinc-300 w-full cursor-pointer"
-              onClick={() => {
-                navigate("/about");
-              }}
-            >
-              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
-                About
-              </li>
-            </Link>
+        {/* MOBILE MENU MODAL */}
+        {!isAboveMediumScreens && isMenuToggled && (
+          <div className="fixed right-0 bottom-0 z-[1001] h-full w-[300px] bg-[#664383] drop-shadow-xl">
+            {/* CLOSE ICON */}
+            <div className="flex justify-end p-12">
+              <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                <img src={close} className="w-6 h-8 fill-white" alt="close" />
+              </button>
+            </div>
 
-            <Link
-              activeClass="active"
-              to="/rooms"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className="border-b-2  border-zinc-300 w-full cursor-pointer"
-              onClick={() => {
-                navigate("/rooms");
-              }}
-            >
-              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
-                Rooms
-              </li>
-            </Link>
-
-            <Link
-              activeClass="active"
-              to="/contact"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className="border-b-2  border-zinc-300 w-full cursor-pointer"
-              onClick={() => {
-                navigate("/contact");
-              }}
-            >
-              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
-                Contact
-              </li>
-            </Link>
-          </ul>
+            {/* MENU ITEMS */}
+            <div className="ml-5 flex flex-col gap-10 text-2xl">
+              {NavLinks.map(({ title, link }, idx) => (
+                <Link
+                  key={idx}
+                  activeClass="active"
+                  to={link}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={800}
+                  className={
+                    "text-base font-medium linked cursor-pointer py-2  mx-10 text-white  "
+                  }
+                >
+                  {title}
+                </Link>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </div>
