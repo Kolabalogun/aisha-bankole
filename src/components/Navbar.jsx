@@ -60,7 +60,7 @@ const Navbar = () => {
               offset={40}
               duration={800}
               className={
-                " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
+                " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2  m-4 text-white  "
               }
             >
               portfolio
@@ -103,7 +103,7 @@ const Navbar = () => {
                 navigate("/");
               }}
             >
-              <li className="border-b-2  text-black border-zinc-300 w-full cursor-pointer py-3 ">
+              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
                 Home
               </li>
             </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
                 navigate("/about");
               }}
             >
-              <li className="border-b-2  text-black border-zinc-300 w-full cursor-pointer py-3 ">
+              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
                 About
               </li>
             </Link>
@@ -136,7 +136,7 @@ const Navbar = () => {
                 navigate("/rooms");
               }}
             >
-              <li className="border-b-2  text-black border-zinc-300 w-full cursor-pointer py-3 ">
+              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
                 Rooms
               </li>
             </Link>
@@ -153,7 +153,7 @@ const Navbar = () => {
                 navigate("/contact");
               }}
             >
-              <li className="border-b-2  text-black border-zinc-300 w-full cursor-pointer py-3 ">
+              <li className="border-b-2  text-white border-zinc-300 w-full cursor-pointer py-3 ">
                 Contact
               </li>
             </Link>
