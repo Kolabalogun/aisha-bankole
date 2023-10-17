@@ -90,7 +90,7 @@ const Navbar = () => {
         </div>
 
         {nav && (
-          <ul className=" h-screen w-full bg-black md:hidden z-50  px-8">
+          <ul className=" h-screen  w-full bg-black md:hidden z-[1000]  px-8">
             <Link
               activeClass="active"
               to="/"
