@@ -15,7 +15,12 @@ const RecentWorks = () => {
         <div className="wrapper gap-7 md:gap-3 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-2  gap-16 place-content-center">
             {projectsFromDB?.map((project, idx) => (
-              <a key={idx} href={`/project/${project?.id}`}>
+              <a
+                key={idx}
+                href={project?.projectLink}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="projectlink space-y-3 w-full h-[400px] hover:scale-95 transition-transform duration-300 ease-in-out">
                   <img
                     src={project?.imgUrl}
@@ -26,7 +31,9 @@ const RecentWorks = () => {
 
                 <div className="mt-3">
                   <a
-                    to={`/project/${project?.id}`}
+                    href={project?.projectLink}
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-lg font-medium projectlink cursor-pointer py-2"
                   >
                     {project?.projectName}
@@ -42,7 +49,7 @@ const RecentWorks = () => {
             href={
               pageContent?.recentWorkLink
                 ? pageContent?.recentWorkLink
-                : "https://www.youtube.com/@adventourswithaisha"
+                : "https://www.youtube.com/@reelbymeeky"
             }
             target="_blank"
             rel="noopener noreferrer"
