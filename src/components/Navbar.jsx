@@ -16,7 +16,7 @@ const Navbar = () => {
       {/* <div className="absolute  h-screen w-full "> </div> */}
       <div className={`w-full h-[80px]  bg-transparent  py-5  `}>
         <div className="flex py-5 justify-between items-center w-full ">
-          <div className=" h-20  ">
+          <div className=" h-16  ">
             {/* <p className="uppercase font-semibold text-white ">Aisha </p>
             <p className="uppercase font-semibold text-white ">Bankole </p> */}
 
