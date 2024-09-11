@@ -1,4 +1,4 @@
-import videosvg from "../../assets/video.svg";
+import videosvg from "../../assets/videos.svg";
 import soundsvg from "../../assets/sound.svg";
 import colorsvg from "../../assets/color.svg";
 import { useGlobalContext } from "../../functions/context";
@@ -14,7 +14,7 @@ const Services = () => {
             : "My professional design services"}
         </h1>
 
-        <div className="h-[2px] w-1/2 my-4 md:my-7 bg-[#996AA0]"></div>
+        <div className="h-[2px] w-1/2 my-4 md:my-7 bg-[#010101]"></div>
 
         <p className="">
           {pageContent?.serviceDescription
@@ -31,6 +31,7 @@ const Services = () => {
                   ? pageContent?.serviceTypeIImgUrl
                   : videosvg
               }
+              // src={videosvg}
               alt=""
               className="object-cover"
             />
@@ -56,6 +57,7 @@ const Services = () => {
                   ? pageContent?.serviceTypeIIImgUrl
                   : soundsvg
               }
+              // src={soundsvg}
               alt=""
               className="object-cover"
             />
@@ -81,6 +83,7 @@ const Services = () => {
                   ? pageContent?.serviceTypeIIIImgUrl
                   : colorsvg
               }
+              // src={colorsvg}
               alt=""
               className="object-cover"
             />

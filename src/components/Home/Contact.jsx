@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import email from "../../assets/email.svg";
-import phone from "../../assets/phone.svg";
+import phone from "../../assets/phonee.svg";
 import fb from "../../assets/fb.svg";
 import instagram from "../../assets/instagram.svg";
 import twitter from "../../assets/twitter.svg";
@@ -87,7 +88,7 @@ const Contact = () => {
             href={pageContent?.footerTwitterLink}
             target={"_blank"}
             rel="noreferrer"
-            className="rounded-[50px] p-2 bg-black mx-3 hover:bg-twitter cursor-pointer hover:bg-[#987efc]"
+            className="rounded-[50px] p-2 bg-black mx-3 hover:bg-twitter cursor-pointer "
           >
             <img src={twitter} alt="twitter" className="h-5" />
           </a>
@@ -95,15 +96,15 @@ const Contact = () => {
             href={pageContent?.footerFacebookLink}
             target={"_blank"}
             rel="noreferrer"
-            className="rounded-[50px] bg-[#987efc] p-2  mx-3 cursor-pointer relative hover:bg-[#000]"
+            className="rounded-[50px] bg-[#010101] p-2  mx-3 cursor-pointer relative "
           >
-            <img src={instagram} alt="instagram1" className="h-5 " />
+            <img src={fb} alt="instagram1" className="h-5 " />
           </a>
           <a
             href={pageContent?.footerInstagramLink}
             target={"_blank"}
             rel="noreferrer"
-            className="rounded-[50px] p-2 bg-black hover:bg-ig  mx-3 cursor-pointer hover:bg-[#987efc]"
+            className="rounded-[50px] p-2 bg-black hover:bg-ig  mx-3 cursor-pointer "
           >
             <img src={instagram} alt="instagram" className="h-5" />
           </a>
@@ -112,13 +113,13 @@ const Contact = () => {
             href={pageContent?.footerLinkedInLink}
             target={"_blank"}
             rel="noreferrer"
-            className="rounded-[50px] p-2 hover:bg-linked  bg-black mx-3 cursor-pointer hover:bg-[#987efc]"
+            className="rounded-[50px] p-2 hover:bg-linked  bg-black mx-3 cursor-pointer "
           >
             <img src={linkedin} alt="linkedin" className="h-4" />
           </a>
         </div>
 
-        <p className="text-black my-8 font-semibold ">Aisha Bankole</p>
+        <p className="text-black my-8 font-semibold ">@reelbyMeeky</p>
         <a
           href="https://ibrahimkolabalogun.web.app/"
           target={"_blank"}

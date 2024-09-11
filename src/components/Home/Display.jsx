@@ -1,6 +1,6 @@
-import vid from "../../assets/vid.mp4";
 import { useGlobalContext } from "../../functions/context";
-import dummyImg from "../../assets/dummy1.jpg";
+import dummyImg from "../../assets/dummy2.jpg";
+import { TestVideo1 } from "../../assets/video";
 
 const Display = () => {
   const { pageContent } = useGlobalContext();
@@ -12,13 +12,15 @@ const Display = () => {
       loop
       muted
       poster={dummyImg}
+      playsInline
     >
       <source
         src={
           pageContent?.videoDisplayVidUrl
             ? pageContent?.videoDisplayVidUrl
-            : vid
+            : TestVideo1
         }
+        // src={TestVideo1}
         type="video/mp4"
       />
     </video>

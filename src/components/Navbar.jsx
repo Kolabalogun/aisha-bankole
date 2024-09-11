@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import { useState } from "react";
-
+import logo from "../assets/logo.png";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 
@@ -16,9 +16,11 @@ const Navbar = () => {
       {/* <div className="absolute  h-screen w-full "> </div> */}
       <div className={`w-full h-[80px]  bg-transparent  py-5  `}>
         <div className="flex py-5 justify-between items-center w-full ">
-          <div className=" ">
-            <p className="uppercase font-semibold text-white ">Aisha </p>
-            <p className="uppercase font-semibold text-white ">Bankole </p>
+          <div className=" h-20  ">
+            {/* <p className="uppercase font-semibold text-white ">Aisha </p>
+            <p className="uppercase font-semibold text-white ">Bankole </p> */}
+
+            <img src={logo} alt="logo" className="h-full  " />
           </div>
 
           {isAboveMediumScreens ? (
@@ -33,7 +35,7 @@ const Navbar = () => {
                   offset={-80}
                   duration={800}
                   className={
-                    " text-[15px]   uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
+                    " text-[15px] font-medium  uppercase cursor-pointer  border-b-zinc-300 py-2 linkcss m-4 text-white  "
                   }
                 >
                   {title}
@@ -69,8 +71,8 @@ const Navbar = () => {
                   to={link}
                   spy={true}
                   smooth={true}
-                  offset={-80}
-                  duration={800}
+                  offset={-50}
+                  duration={600}
                   className={
                     "text-base font-medium linked cursor-pointer py-2  mx-10 text-white  "
                   }

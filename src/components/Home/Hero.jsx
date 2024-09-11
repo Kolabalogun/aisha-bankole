@@ -1,27 +1,48 @@
 import { BsArrowDown } from "react-icons/bs";
-import vid from "../../assets/vid4.mp4";
-import dummyImg from "../../assets/dummy.jpg";
 import Navbar from "../Navbar";
 import { useGlobalContext } from "../../functions/context";
 import { Link } from "react-scroll";
+import { useEffect, useRef, useState } from "react";
+import { Wallpaper1 } from "../../assets/svg";
+import { TestVideo } from "../../assets/video";
 
 const Hero = () => {
   const { pageContent } = useGlobalContext();
 
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const handleUserInteraction = () => {
+    setIsMuted(false);
+    videoRef.current.play();
+  };
+
+  useEffect(() => {
+    if (!isMuted && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [isMuted]);
+
   return (
-    <div className="relative w-full h-screen  " id="home">
+    <div
+      className="relative w-full h-screen"
+      id="home"
+      onClick={handleUserInteraction}
+    >
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        ref={videoRef}
+        className="absolute top-0 left-0 w-full h-full object-cover   "
         autoPlay
         loop
-        poster={dummyImg}
-        muted
+        muted={isMuted}
+        playsInline
+        poster={Wallpaper1}
       >
-        <source src={vid} type="video/mp4" />
+        <source src={TestVideo} type="video/mp4" />
       </video>
 
       {/* Transparent black overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80"></div>
 
       {/* Navbar */}
       <div className="max-w-[1240px] px-5 sm:px-10 xl:px-0 mx-auto">
@@ -46,7 +67,7 @@ const Hero = () => {
               offset={-80}
               duration={900}
             >
-              <button className="bg-purple-800 p-3 self-start flex items-center gap-3 uppercase">
+              <button className="bg-[#010101] p-3 self-start flex items-center gap-3 uppercase">
                 <span className="font-syne font-bold">About me</span>
                 <div className="text-xl font-bold">
                   <BsArrowDown />
